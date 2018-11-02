@@ -373,12 +373,12 @@
                             <button class="btn btn-success" data-toggle="modal" data-target="#themchucvu"> Thêm chức vụ </button>
                         </div>
                         <div class="panel">
-                            Ẩn cột: @*<a class="toggle-vis" data-column="0">Tên tài khoản</a> /*@ <a class="toggle-vis" id="tchucvu" data-column="1">Name</a> / <a class="toggle-vis" id="tchucvu" data-column="2">Mật khẩu</a> / <a class="toggle-vis" id="tchucvu" data-column="3">Trạng thái</a>
+                            Ẩn cột: @*<a class="toggle-vis" data-column="0">Tên tài khoản</a> /*@ <a class="toggle-vis" id="tchucvu" data-column="1">Tên chức vụ</a> / <a class="toggle-vis" id="tchucvu" data-column="2">Flag</a> / <a class="toggle-vis" id="tchucvu" data-column="3">Chức năng</a>
                         </div>
 
                         <!-- modal -->
                         <div id="themchucvu" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-lg" style="margin:auto">
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
@@ -427,11 +427,11 @@
                                                 @foreach (var item in Model.listquyen)
                                                 {
                                                     <span class="m-b-30 col-lg-6">
-                                                        <input type="checkbox" checked="" class="js-switch" data-color="#f96262" data-size="small" style="display: none;" data-switchery="true">
+                                                        <input type="checkbox"  class="js-switch" data-color="#f96262" data-size="small" style="display: none;" data-switchery="true">
                                                         <span> @item.Tenquyen </span>
                                                     </span>
                                                 }
-                                                <span class="text-info" style="font-size:12px"> chọn các quyền cho chức vụ</span>
+                                                <div class="text-info" style="font-size:12px"> chọn các quyền cho chức vụ</div>
                                             </div>
 
                                         </div>
@@ -461,6 +461,7 @@
                                         <th>Mã chức vụ</th>
                                         <th>Tên chức vụ</th>
                                         <th>Flag</th>
+                                        <th>Chức năng</th>
 
                                     </tr>
                                 </thead>
@@ -471,6 +472,11 @@
                                             <td>@item.Machucvu</td>
                                             <td>@item.Tenchucvu</td>
                                             <td>@item.Flag</td>
+                                            <td>
+                                                <button class="btnsuachucvu" type="button" data-toggle="modal" data-target="#suachucvu" style="background-color:transparent;border:none">
+                                                    <i class="fa fa-pencil-square-o" style="color:red"> </i>
+                                                </button>
+                                            </td>
                                         </tr>
                                     }
 

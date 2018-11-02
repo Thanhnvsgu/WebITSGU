@@ -21,6 +21,7 @@ namespace DoAnKhoaIT2.Areas.Admin.Controllers
             ThongtinnguoidungModel res = new ThongtinnguoidungModel();
             res.listtaikhoan = dao.Listtaikhoan();
             res.listchucvu = dao.Listchucvu();
+            res.listquyen = dao.Listquyen();
             ViewBag.Ichucvu = dao.Ichucvu();
             ViewBag.Itrangthai = dao.ITrangthai;
             ViewBag.show = "false";
@@ -60,6 +61,7 @@ namespace DoAnKhoaIT2.Areas.Admin.Controllers
             ThongtinnguoidungDao dao = new ThongtinnguoidungDao();
             res.listtaikhoan = dao.Listtaikhoan();
             res.listchucvu = dao.Listchucvu();
+            res.listquyen = dao.Listquyen();
             var kt = dao.timtaikhoan(collection.taikhoan.Tentaikhoan);
             if (kt.Matkhau == collection.taikhoan.Matkhau)
                 collection.taikhoan.Matkhau = kt.Matkhau;
@@ -90,6 +92,7 @@ namespace DoAnKhoaIT2.Areas.Admin.Controllers
             string tt = res2.Namsinh.Value.ToShortDateString().ToString();
             return Json(new
             {
+                Jtaikhoan = res,
                 Jtentaikhoan = res.Tentaikhoan,
                 Jmachucvu =res.Machucvu,
                 Jmatkhau = res.Matkhau,

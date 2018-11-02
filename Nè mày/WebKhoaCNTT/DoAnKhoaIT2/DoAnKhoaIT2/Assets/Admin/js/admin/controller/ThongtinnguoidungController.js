@@ -41,7 +41,7 @@ var thongtinnguoidung = {
                 data: { id: btn.find('.tentaikhoan').text() },
                 dataType: "json",
                 type: "POST",
-                success: function (response) {    
+                success: function (response) {
                     $(".machucvutaikhoanedit").val(response.Jmachucvu);
                     $(".tentaikhoanedit").val(response.Jtentaikhoan);
                     $(".matkhautaikhoanedit").val(response.Jmatkhau);
