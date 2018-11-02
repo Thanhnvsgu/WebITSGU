@@ -92,9 +92,8 @@ namespace DoAnKhoaIT2.Areas.Admin.Controllers
             string tt = res2.Namsinh.Value.ToShortDateString().ToString();
             return Json(new
             {
-                Jtaikhoan = res,
                 Jtentaikhoan = res.Tentaikhoan,
-                Jmachucvu =res.Machucvu,
+                Jmachucvu = res.Machucvu,
                 Jmatkhau = res.Matkhau,
                 Jmail = res.Mail,
                 Jhoten = res2.Hoten,
