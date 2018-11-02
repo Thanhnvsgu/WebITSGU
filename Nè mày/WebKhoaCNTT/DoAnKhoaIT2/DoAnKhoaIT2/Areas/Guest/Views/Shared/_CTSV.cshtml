@@ -1,0 +1,4 @@
+﻿@foreach (var item in @ViewBag.CTSV)
+{
+<li>@Html.ActionLink((string)@item.TenCTSV, "CTSV", "SinhVien", new { mact = item.MaCTSV , tenctsv = item.TenCTSV }, null)</li>
+}

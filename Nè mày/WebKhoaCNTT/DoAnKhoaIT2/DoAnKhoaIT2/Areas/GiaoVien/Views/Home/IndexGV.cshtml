@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "IndexGV";
+    Layout = "~/Areas/GiaoVien/Views/Shared/_LayoutGV.cshtml";
+}
+
+<div class="header-slide">
+    <div class="content-slide">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Home Slideshow-->
+                <div class="slide-show">
+                    <div id="owl-slide-show" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <a target="" href="news-14.html">
+                                <img class="newsbox" src="/Templates/images/hinhtinnoibat1.jpg" alt="Thông báo xét tuyển ngành CNTT chất lượng cao">
+                                <div class="carousel-caption">Thông báo tuyển sinh trình độ Tiến sĩ, Thạc sĩ năm 2018</div>
+                            </a>
+                        </div><div class="item">
+                            <a target="" href="">
+                                <img class="newsbox" src="/Templates/images/hinhtinnoibat2.jpg" alt="Sinh viên khoa I.T thích xem hoạt hình">
+                                <div class="carousel-caption">Sinh viên khoa I.T thích xem hoạt hình</div>
+                            </a>
+                        </div><div class="item">
+                            <a target="" href="">
+                                <img class="newsbox" src="/Templates/images/tinnoibat3.jpg" alt="Xu hướng chụp ảnh của giới trẽ I.T hiện nay">
+                                <div class="carousel-caption">Xu hướng chụp ảnh của giới trẽ I.T hiện nay</div>
+                            </a>
+                        </div><div class="item">
+                            <a target="" href="">
+                                <img class="newsbox" src="/Templates/images/tinnoibat4.jpg" alt="Văn Thành tạo dáng chụp ảnh sống ảo">
+                                <div class="carousel-caption">Văn Thành tạo dáng chụp ảnh sống ảo</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Home Slideshow-->
+                <!-- Home Hot new-->
+                <!-- End Home Hot new-->
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-4 news-hot">
+                <!-- hot new-->
+                <div class="hot-title"> <span> Thông báo </span> </div>
+
+                <div class="hot-content scrollbar-inner" style="margin-right:0px">
+                    @*@foreach (var item in Model.v4)
+                        {
+                            <ul id="owl-hot-new">
+                                <li>
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink(item.Noidung, "ThongBao1", "ThongBao", new { mabaidang = item.Mabaidang }, null)
+                                            <span class="badge label-danger "> 28/10/2018 </span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        }*@
+
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-4 hot-button">
+                    <p class="btn btn-info"> @Html.ActionLink("Xem thêm", "TBGV", "ThongBaoGV")</p>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+                <!-- End hot new-->
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" style="height:320px; background-color:palevioletred; border: solid white 1px; margin-top:5px">
+            <h3 style="color:white; padding:10px">Tin tức - Sự kiện</h3>
+            <ul class="list-group">
+                <li class="list-group-item" style="padding-bottom:30px; font-weight:bold">
+                    <a href="#">
+                        <span class="col-lg-10"> Thông báo về tuyển sinh 2018 </span>
+                        <span class="col-lg-2">
+                            <span class="badge badge-pill badge-danger" style="font-size:10px"> 27/10/2018 </span> <span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li class="list-group-item" style="padding-bottom:30px; font-weight:bold">
+                    <a href="#">
+                        <span class="col-lg-10"> Thông báo về tuyển sinh 2018 </span>
+                        <span class="col-lg-2">
+                            <span class="badge badge-pill badge-danger" style="font-size:10px"> 27/10/2018 </span> <span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <p class="btn btn-info mt-2" style="float:right; color:white"> @Html.ActionLink("Xem thêm", "TT_SKGV", "TinTuc_SuKienGV")</p>
+            @*<button class="btn btn-info mt-2" style="float:right; color:white">@Html.ActionLink("Xem thêm", "TT_SKGV", "TinTuc_SuKienGV") </button>*@
+        </div>
+
+        <div class="col-sm-6" style="height:320px; background-color:palevioletred; border: solid white 1px; margin-top:5px">
+            <h3 style="color:white; padding:10px">Lịch giảng dạy</h3>
+            <ul class="list-group">
+                <li class="list-group-item" style="padding-bottom:30px; font-weight:bold">
+                    <a href="#">
+                        <span class="col-lg-10"> Lịch giảng dạy 1 </span>
+                        <span class="col-lg-2">
+                            <span class="badge badge-pill badge-danger" style="font-size:10px"> 27/10/2018 </span> <span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li class="list-group-item" style="padding-bottom:30px; font-weight:bold">
+                    <a href="#">
+                        <span class="col-lg-10"> Lịch giảng dạy 2 </span>
+                        <span class="col-lg-2">
+                            <span class="badge badge-pill badge-danger" style="font-size:10px"> 27/10/2018 </span> <span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <p class="btn btn-info mt-2" style="float:right; color:white"> @Html.ActionLink("Xem thêm", "LGD", "LichGiangDay")</p>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="panel panel-default" style="margin-left: -10px;margin-right: -10px;">
+                <div class="panel-heading" style="font-size:150%;color: red; font-weight:bold; color: red; font-weight:bold;margin-top: 10px;padding-top: 15px;padding-bottom: 15px;padding-left: 15px;padding-right: 0px;">@Html.ActionLink("Công tác","CT","CongTac")</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" style="height:190px">
+                            <div class="col-sm-4" style="background: blue; height:160px">
+                                <img src="" class="img-thumbnail" alt="Cinque Terre" width=304 height=160>
+                            </div>
+                            <div class="col-sm-8" style="background: white; height:160px">
+                                <div class="benphai">
+                                    <h4 style="width:100%; padding-bottom:20px; font-weight:bold">@Html.ActionLink("Tiêu đề", "CT1", "CongTac")</h4>
+                                    <p>Ngày đăng: 20/11/2018</p>
+                                    <div style="width:100%; height:auto">
+                                        <span>nội dung bên trong nó viết chữ càng dài ra là nó đẹp hà, hihihihihihihihih hi hi hi hi ha ha</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                        <li class="list-group-item" style="height:190px">
+                            <div class="col-sm-4" style="background: blue; height:160px">
+                                <img src="" class="img-thumbnail" alt="Cinque Terre" width=304 height=160>
+                            </div>
+                            <div class="col-sm-8" style="background: white; height:160px">
+                                <div class="benphai">
+                                    <h4 style="width:100%; padding-bottom:20px; font-weight:bold">Tiêu đề</h4>
+                                    <p>Ngày đăng: 20/11/2018</p>
+                                    <div style="width:100%; height:auto">
+                                        <span>nội dung bên trong nó</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item" style="height:190px">
+                            <div class="col-sm-4" style="background: blue; height:160px">
+                                <img src="" class="img-thumbnail" alt="Cinque Terre" width=304 height=160>
+                            </div>
+                            <div class="col-sm-8" style="background: white; height:160px">
+                                <div class="benphai">
+                                    <h4 style="width:100%; padding-bottom:20px; font-weight:bold">Tiêu đề</h4>
+                                    <p>Ngày đăng: 20/11/2018</p>
+                                    <div style="width:100%; height:auto">
+                                        <span>nội dung bên trong nó</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

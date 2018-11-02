@@ -1,0 +1,83 @@
+﻿@model PagedList.IPagedList<Models.ViewModel.BaidangViewModel>
+    @using PagedList.Mvc
+@{
+    ViewBag.Title = "TT_TS";
+    Layout = "~/Areas/Guest/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="/Templates/css/khungbentrai.css" rel="stylesheet" id="theme-stylesheet">
+</head>
+<body>
+    <div id="content">
+
+        <div class="container">
+
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+
+                    <li>
+                        @Html.ActionLink("Trang chủ", "Index", "Home")
+                    </li>
+                    <li>Thông tin tuyển sinh</li>
+
+                </ul>
+            </div>
+            <div class="col-sm-9" id="blog-listing">
+                @foreach (var item in Model)
+                {
+
+
+                    <div class="post">
+                        <h4>@Html.ActionLink(item.Tentieude, "TuyenSinh1", "ThongTin_TS")</h4>
+                        <p>
+                            @item.Noidung
+                        </p>
+                        <p class="read-more btn btn-primary"> @Html.ActionLink("Xem thêm", "TuyenSinh1", "ThongTin_TS", new { mabaidang = item.Mabaidang }, null)</p>
+                    </div>
+
+
+                }
+            </div>
+            </div>
+
+
+                @*<p class="read-more"> <a href="" class="btn btn-primary"> Xem thêm</a> </p>*@
+
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("TT_TS", new { page, maloai = ViewBag.Maloai }))
+
+            </div>
+
+            </div>
+
+         @*#content*@
+
+
+
+
+
+        @*<div class="col-sm-9" id="blog-listing">
+                <div class="post">
+                    <h4>
+
+                    </h4>
+                    <p>
+
+                    </p>
+                    <p class="read-more">
+                        <a></a>
+                    </p>
+                </div>
+
+                <div class="post">
+
+                </div>
+
+                <div class="post">
+
+                </div>
+            </div>*@
+</body>
+
+

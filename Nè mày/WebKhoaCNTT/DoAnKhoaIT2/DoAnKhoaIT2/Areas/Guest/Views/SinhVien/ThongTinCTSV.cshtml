@@ -1,0 +1,43 @@
+﻿@model Models.ViewModel.CTSV_ThongTinND
+@{
+    ViewBag.Title = "SV_Quytrinh1";
+    Layout = "~/Areas/Guest/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="/Templates/css/khungbentrai.css" rel="stylesheet" id="theme-stylesheet">
+</head>
+<body>
+    <div id="content">
+
+        <div class="container">
+
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+
+                    <li>
+                        <a @Html.ActionLink("Trang chủ", "Index", "Home")</a>
+                    </li>
+                    <li>@Html.ActionLink((string)@ViewBag.TenCTSV, "CTSV", "SinhVien",new { mact=ViewBag.MaCTSV,tenctsv=ViewBag.TenCTSV},null)</li>
+                    <li>Thông tin</li>
+                </ul>
+            </div>
+            <div class="col-md-9" style="margin-right:400px ; margin-left: 0px">
+                <div id="text-page" class="box" style="margin-right:-200px">
+                    <h1 style="font-size:22px">@Model.Tieude</h1>
+                    <p>@Model.Noidung</p>
+                    <hr />
+                    <p>Đăng bởi: @Model.TenTK, Ngày: @Model.Ngaydang</p>
+                    <p>Đính kèm:</p>
+                    @foreach (var item in @ViewBag.File)
+                    {
+
+                        <li>@Html.ActionLink((string)@item.TenFile, "Dowload", "SinhVien", new { filepath = @item.FilePath }, null)</li>
+
+                    }
+
+                </div>
+            </div>
+
+        </div>  @*#content*@
+

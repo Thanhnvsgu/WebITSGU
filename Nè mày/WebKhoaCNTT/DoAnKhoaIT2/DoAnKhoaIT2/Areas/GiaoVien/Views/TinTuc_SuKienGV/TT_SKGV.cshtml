@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "TT_SKGV";
+    Layout = "~/Areas/GiaoVien/Views/Shared/_LayoutGV.cshtml";
+}
+
+<head>
+    <link href="/Templates/css/khungbentrai.css" rel="stylesheet" id="theme-stylesheet">
+</head>
+<body>
+    <div id="content">
+
+        <div class="container">
+
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+
+                    <li>
+                        <a @Html.ActionLink("Trang chủ", "IndexGV", "Home")</a>
+                    </li>
+                    <li>Học bổng</li>
+
+                </ul>
+            </div>
+            <div class="col-sm-9" id="blog-listing">
+
+                <div class="post">
+                    <h4>@Html.ActionLink("Tiêu đề tin tức su kien 1", "TT_SKGV1", "TinTuc_SuKienGV")</h4>
+                    <p>
+                        Nội dung bên trong
+                    </p>
+                    <p class="read-more"><a class="btn btn-primary" @Html.ActionLink("Xem thêm", "TT_SKGV1", "TinTuc_SuKienGV")</a> </p>
+                </div>
+
+
+
+                @*<p class="read-more"> <a href="" class="btn btn-primary"> Xem thêm</a> </p>*@
+
+
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="">Mới hơn</a>
+                    </li>
+                    <li class="next">
+                        <a href="">Cũ hơn</a>
+                    </li>
+                </ul>
+
+
+
+            </div>
+
+        </div>  @*#content*@
+
+</body>
+

@@ -1,0 +1,4 @@
+﻿@foreach (var item in @ViewBag.GT1)
+{
+    <li>@Html.ActionLink((string)@item.TenGT, "Gioithieu", "GioiThieuCSVC", new { magt = item.MaGT ,tengt=item.TenGT}, null)</li>
+}

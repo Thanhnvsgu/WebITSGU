@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "ThucTap2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="/Templates/css/khungbentrai.css" rel="stylesheet" id="theme-stylesheet">
+</head>
+<body>
+    <div id="content">
+
+        <div class="container">
+
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+
+                    <li>
+                        <a @Html.ActionLink("Trang chủ", "Index", "Home")</a>
+                    </li>
+                    <li>@Html.ActionLink("Thực tập - Tuyển dụng", "TT_TD", "ThucTap_TuyenDung")</li>
+                    <li>Thực tập 2</li>
+                </ul>
+            </div>
+            <div class="col-md-9" style="margin-right:400px ; margin-left: 0px">
+                <div id="text-page" class="box" style="margin-right:-200px">
+                    <h1 style="font-size:22px">Tên tiêu đề</h1>
+                    <p>Nội dung tiêu đề</p>
+                    <hr />
+                    <p>Post by: Khoa CNTT, Ngày: </p>
+                    <p>Đính kèm</p>
+
+                </div>
+            </div>
+
+        </div>  @*#content*@
+
+
+
+
+
