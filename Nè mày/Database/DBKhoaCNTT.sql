@@ -208,6 +208,7 @@ INSERT INTO dbo.Tag VALUES  ( '5', N'Đoàn-hội','IT12', 1)
 INSERT INTO dbo.Tag VALUES  ( '6', N'Tuyển dụng','IT3', 1)
 INSERT INTO dbo.Tag VALUES  ( '7', N'Tuyển sinh','IT3', 1)
 INSERT INTO dbo.Tag VALUES  ( '8', N'Olympic','IT15', 1)
+INSERT INTO dbo.Tag VALUES  ( '9', N'CLB sinh viên','IT11', 1)
 
 
 GO
@@ -228,6 +229,8 @@ INSERT INTO dbo.Loaibaidang VALUES  ( 'TD',N'Thực tập - Tuyển dụng',N'Nh
 
 INSERT INTO dbo.Loaibaidang VALUES  ( 'TS',N'Thông tin tuyển sinh',N'Những thông tin liên quan đến tuyển sinh các khóa', 1)
 
+INSERT INTO dbo.Loaibaidang VALUES  ( 'HDSV',N'Hoạt động sinh viên',N'Những thông tin liên quan đến hoạt động sinh viên', 1)
+
 GO
 
 ---8.
@@ -246,10 +249,13 @@ INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'SK', '1', 1)
 INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'SK', '2', 1)
 INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'SK', '3', 1)
 INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'SK', '4', 1)
-INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'SK', '5', 1)
-INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'SK', '8', 1)
+
 INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'TD', '6', 1)
 INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'TS', '7', 1)
+
+INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'HDSV', '5', 1)
+INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'HDSV', '8', 1)
+INSERT INTO dbo.ChitietLoaiBaiDang  VALUES  ( 'HDSV', '9', 1)
 
 GO
 
@@ -268,15 +274,39 @@ CREATE TABLE Baidang
 	Flag BIT,
 	FOREIGN KEY (TagID) REFERENCES Tag(TagID)
 )
-INSERT INTO dbo.Baidang VALUES  ( 'BD1' ,'8'  , N'Thông báo về Olympic sinh viên ' ,N'Thông báo Về việc huấn luyện sinh viên tham dự Olympic Tin học sinh viên Việt Nam và Kỳ thi lập trình sinh viên Quốc tế ACM năm 2018' , '4-02-2018','6-14-2018',N'ALL', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD1' ,'8'  , N'Thông báo về cuộc thi Olympic sinh viên ' ,N'Thông báo Về việc huấn luyện sinh viên tham dự Olympic Tin học sinh viên Việt Nam và Kỳ thi lập trình sinh viên Quốc tế ACM năm 2018' , '4-02-2018','6-14-2018',N'ALL', 1 )
 
-INSERT INTO dbo.Baidang VALUES  ( 'BD2' ,'6'   , N'Tuyển dụng ở IVC Freshser 2018' ,N'Công ty IVC tuyển dụng Fresher năm 2018, với các ngành nghề: C++; Frontend (HTML, JS); Java. Yêu cầu: nộp CV + bảng điểm. Hạn chót đăng ký: 15/10/2018. Các bạn xem thêm thông tin chi tiết ở file đính kèm' , '9-25-2018','10-15-2018',N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD2' ,'6'   , N'Tuyển dụng việc làm cho sinh viên mới ra trường ở IVC Freshser 2018' ,N'Công ty IVC tuyển dụng Fresher năm 2018, với các ngành nghề: C++; Frontend (HTML, JS); Java. Yêu cầu: nộp CV + bảng điểm. Hạn chót đăng ký: 15/10/2018. Các bạn xem thêm thông tin chi tiết ở file đính kèm' , '9-25-2018','10-15-2018',N'SV', 1 )
 
-INSERT INTO dbo.Baidang VALUES  ( 'BD3' ,'1'   , N'Nghiên cứu' ,N'1. Nguyễn Hòa, Nguyễn Nhựt Đông, Toán rời rạc, NXB Thanh Niên, 2014, 246 trang, ISBN: 978-604-64-1641- 8; 2. Nguyễn Hòa, Cơ sở dữ liệu mờ và xác suất, NXB Đại học Quốc gia TP.HCM, 2016, 179 trang, ISBN:978-604- 73-3941- 9; 3. Huỳnh Minh Trí, Phan Tấn Quốc, Nguyễn Nhựt Đông, Giáo trình Kỹ thuật lập trình, 277 trang, NXBĐHQG TPHCM, ISBN: 978-604- 73-4633- 2, 2016' , '09-09-2018','09-09-2018' ,N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD3' ,'1'   , N'Nghiên cứu về bộ môn Toán rời rạc' ,N'1. Nguyễn Hòa, Nguyễn Nhựt Đông, Toán rời rạc, NXB Thanh Niên, 2014, 246 trang, ISBN: 978-604-64-1641- 8; 2. Nguyễn Hòa, Cơ sở dữ liệu mờ và xác suất, NXB Đại học Quốc gia TP.HCM, 2016, 179 trang, ISBN:978-604- 73-3941- 9; 3. Huỳnh Minh Trí, Phan Tấn Quốc, Nguyễn Nhựt Đông, Giáo trình Kỹ thuật lập trình, 277 trang, NXBĐHQG TPHCM, ISBN: 978-604- 73-4633- 2, 2016' , '09-09-2018','09-09-2018' ,N'SV', 1 )
 
 INSERT INTO dbo.Baidang VALUES  ( 'BD4' ,'2'   , N'Về việc học bổng đồng hương Bạc Liêu - Cà Mau năm học 2017-2018' ,N'Các bạn sinh viên thường trú tại 02 tỉnh Bạc Liêu, Cà Mau đang học hệ chính quy tại trường, có hoàn cảnh đặc biệt khó khăn, có phẩm chất đạo đức tốt, hộ nghèo hoặc có thành tích đạt điểm trung bình cao, được khen thưởng thành tích khác,....Chi tiết tại file đính kèm' , '10-05-2018','10-05-2018' ,N'ALL', 1 )
 
+INSERT INTO dbo.Baidang VALUES ( 'BD5' ,'1'   , N'Nghiên cứu khoa học' ,N'Quý thầy cô và các bạn sinh viên có thể tham gia nghiên cứu khoa học về lĩnh vực thực tế ảo VR đang hot hiện nay, tham gia thảo luận chia sẽ kiến thức, kinh nghiệm....Chi tiết tại file đính kèm' , '10-05-2018','10-05-2018' ,N'ALL', 1 )
 
+INSERT INTO dbo.Baidang VALUES ( 'BD6' ,'1'   , N'Thông báo giao lưu với giám đốc công ty điều hành FSOFT ở hội trường A' ,N'Giảng viên, học sinh có dịp tham gia, gặp mặt giám đốc điều hành công ty phần mềm FSOFT. Chia sẽ những thắc mắc về công việc hiện tại, chia sẽ kinh nghiệm, khó khăn,....Chi tiết tại file đính kèm' , '11-05-2018','11-05-2018' ,N'ALL', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD7' ,'6'   , N'Tuyển dụng việc làm cho sinh viên mới ra trường ở công ty FPT 2018' ,N'Công ty FPT tuyển dụng Fresher năm 2018, với các ngành nghề: C++; Frontend (HTML, JS); Java. Yêu cầu: nộp CV + bảng điểm + bằng Toeic. Hạn chót đăng ký: 15/10/2018. Các bạn xem thêm thông tin chi tiết ở file đính kèm' , '9-20-2018','10-15-2018',N'SV', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD8' ,'6'   , N'Thực tập cho sinh viên khóa 15' ,N'Khoa thông báo với sinh viên về thực tập khóa 2015. Các bạn chọn địa điểm thực tập và đăng kí với khoa. Hạn chót đăng ký: 15/10/2018. Các bạn xem thêm thông tin chi tiết ở file đính kèm' , '9-25-2018','10-15-2018',N'SV', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD9' ,'7'   , N'Thông báo tuyển sinh ngành CNTT khóa 2019' ,N'Chỉ tiêu ngành công nghệ thông tin trường đại học Sài Gòn khóa năm 2019 cần tuyển 400 sinh viên bao gồm các chuyên ngành: Kĩ thuật phần mềm, Mạng máy tính, Hệ thông Thông tin' , '9-26-2018','09-20-2019',N'SV', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD10' ,'7'   , N'Thông báo tuyển sinh ngành CNTT trình độ thạc sĩ hệ vừa học vừa làm' ,N'Chỉ tiêu ngành công nghệ thông tin trường đại học Sài Gòn thạc sĩ cần tuyển 50 học viên chuyên ngành Kĩ thuật phần mềm' , '11-02-2018','11-29-2019',N'SV', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD11' ,'7'   , N'Thông báo tuyển sinh ngành CNTT trình độ tiến sĩ hệ vừa học vừa làm' ,N'Chỉ tiêu ngành công nghệ thông tin trường đại học Sài Gòn thạc sĩ cần tuyển 30 học viên chuyên ngành Kĩ thuật phần mềm, Hệ thống thông tin' , '11-02-2018','11-29-2019',N'SV', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD12' ,'9'   , N'Câu lạc bộ bóng đá nam nữ tuyển thành viên tham dự' ,N'Câu lạc bộ bóng đá tuyển các bạn nam nữ đam mê bóng đá tham gia vào câu lạc bộ bóng đá của trường, lịch tập đối với nam : 3h chiều thứ 2-4-6 hàng tuần, lịch tập đối với nữ : 4h chiều thứ 3-5-7 hàng tuần. Đăng kí tham gia liên lạc SDT : 0123456789' , '11-03-2018','11-20-2019',N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD13' ,'9'   , N'Thay đổi lịch tập của câu lạc bộ bóng chuyền' ,N'Thông báo thay đổi lịch tập của câu lạc bộ bóng chuyền tại sân B cơ sở chính: đổi sang thứ 17h thứ 4 hàng tuần' , '11-01-2018','11-10-2019',N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD14' ,'9'   , N'Câu lạc bộ cầu lông nam tuyển thành viên tham dự' ,N'Câu lạc bộ cầu lông tuyển các bạn nam nữ đam mê bóng đá tham gia vào câu lạc bộ bóng đá của trường, lịch tập đối với nam : 3h chiều thứ 2-4-6 hàng tuần, lịch tập đối với nữ : 4h chiều thứ 3-5-7 hàng tuần. Đăng kí tham gia liên lạc SDT : 0123456789' , '11-03-2018','11-20-2019',N'SV', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD15' ,'5'   , N'Thông báo sinh hoạt công dân khóa 16' ,N'Sinh hoạt công dân khóa 16 ngày 16/11/2018 tại hội trường C cơ sở chính, yêu cầu sinh viên có mặt đầy đủ và đúng giờ, trừ 10d rèn luyện đối với sinh viên không tham gia. Chi tiết tại file đính kèm ' , '10-28-2018','11-17-2019',N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD16' ,'5'   , N'Sự kiện 20/11 tri ân giáo viên khoa CNTT trường ĐH Sài Gòn ' ,N'Vào ngày 20/11/2018 khoa CNTT tổ chức sự kiện Tri ân giáo viên, có tổ chức các trò chơi bóng đá, bóng chuyền,tặng hoa tri ân... Các bạn đăng kí tham gia được cộng 5 điểm rèn luyện. Chi tiết xem tại file đính kèm ' , '10-26-2018','11-20-2019',N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD17' ,'5'   , N'Thông báo về việc Hiến máu nhân đạo giúp đỡ mọi người' ,N'Trường tổ chức sự kiện Hiến máu tình nguyện mang những giọt máu đến người bệnh, người khó khăn, sự kiện tổ chức vào ngày 03/11/2018 tại hội trường A cơ sở chính. Ngoài ra bạn nào tham gia được tặng 10 hộp sữa ông Thọ, kèm 80k VNĐ và được cộng 10d rèn luyện. Chi tiết tại file đính kèm ' , '10-26-2018','11-03-2019',N'SV', 1 )
+
+INSERT INTO dbo.Baidang VALUES  ( 'BD18' ,'8'   , N'Thông báo tổ chức kì thi Olympic 2018 tại Hà Nội' ,N'Thông báo về kì thi Olympic 2018. Chi tiết tại file đính kèm ' , '10-28-2018','11-17-2019',N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD19' ,'8'   , N'Danh sách sinh viên tham dự thi Olympic 2018 tổ chức ở Hà Nội' ,N'Danh sách sinh viên dự Olympic 2018. Chi tiết tại file đính kèm ' , '10-28-2018','11-17-2019',N'SV', 1 )
+INSERT INTO dbo.Baidang VALUES  ( 'BD20' ,'8'   , N'Kết quả kì thi Olympic 2018 tổ chức ở Hà Nội' ,N'Danh sách sinh viên đậu kì thi Olympic 2018. Chi tiết tại file đính kèm ' , '11-04-2018','1-20-2020',N'SV', 1 )
 GO
 
 --10.
@@ -774,5 +804,5 @@ GO*/
 GO
 
 GO*/
-select * from NDCongTacSV
-select * from CongTacSV
+/*select * from NDCongTacSV
+select * from CongTacSV*/
